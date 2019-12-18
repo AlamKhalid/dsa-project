@@ -112,11 +112,11 @@ bool AVLTree::search(Node* root, string key)
 
 	else if (compar(key, root->key) <= -1)
 	{
-		search(root->left, key);
+		return search(root->left, key);
 	}
 	else if (compar(key, root->key) >= 1)
 	{
-		search(root->right, key);
+		return search(root->right, key);
 	}
 	else
 	{
