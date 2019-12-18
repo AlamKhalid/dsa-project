@@ -33,7 +33,9 @@ string addNewWord(string key) {
 		system("cls");
 		cout << "Word: " << key << endl;
 		cout << "Enter meaning: ";
-		getline(cin, newWord);	
+		cin.ignore();
+		getline(cin, newWord);
+		cout << "\n\nWord successfully added." << endl;
 	}
 
 	return newWord;
