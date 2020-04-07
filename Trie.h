@@ -1,5 +1,5 @@
 #pragma once
-
+// conatins prototypes of Hash Table / trie
 #ifndef TRIE_H
 #define TRIE_H
 #define SIZE 26

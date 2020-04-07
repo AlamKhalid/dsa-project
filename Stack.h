@@ -1,5 +1,5 @@
 #pragma once
-
+// contains stack function prototypes
 #ifndef STACK_H
 #define STACK_H
 
@@ -9,7 +9,6 @@
 using namespace std;
 
 class Stack {
-
 private:
 	int size;
 	StackNode* top;

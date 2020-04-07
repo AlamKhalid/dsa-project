@@ -1,11 +1,13 @@
 #ifndef AVLTREE_H
+// contains all the function prototypes of AVL tree functions
 #define AVLTREE_H
+
 #include<string>
 #include"AVLNode.h"
+
 using namespace std;
 
-class AVLTree
-{
+class AVLTree {
 private:
 	Node* root;
 	int size;
@@ -19,13 +21,8 @@ public:
 	int compar(string, string);
 	void add(string, string);
 	bool search(Node*, string);
-	Node* minright(Node*);
-	int number();
 	bool helpsearch(string);
-	int helpcount(string, string);
 	Node* insert(Node*, string, string);
-	int search1(Node*, string);
-	int count(Node*, string);
 };
 
 #endif

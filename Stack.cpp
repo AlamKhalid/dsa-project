@@ -12,11 +12,11 @@ Stack::Stack() {
 	top = NULL;
 }
 
-bool Stack::isEmpty() {
+bool Stack::isEmpty() { 
 	return top == NULL;
 }
 
-void Stack::push(string word) {
+void Stack::push(string word) { // push search in stack
 
 	StackNode* temp = new StackNode();
 
@@ -32,7 +32,7 @@ void Stack::push(string word) {
 	size++;
 }
 
-void Stack::printAll() {
+void Stack::printAll() { // to print all searches
 
 	StackNode* temp = top;
 	if (isEmpty()) {
@@ -40,12 +40,11 @@ void Stack::printAll() {
 	}
 	else {
 		int i = 1;
-		cout << "\n\nWords searched are as follows: \n"<<endl;
+		cout << "\n\nWords searched are as follows: \n" << endl;
 		while (temp) {
-			cout <<i<<". "<<temp->wordSeached << endl;
+			cout << i << ". " << temp->wordSeached << endl;
 			temp = temp->next;
 			i++;
 		}
 	}
-
 }

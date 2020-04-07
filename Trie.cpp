@@ -1,11 +1,10 @@
 #pragma once
 
-
 #include "Trie.h"
 #include<iostream>
+#include <time.h>
 
 using namespace std;
-
 
 Trie::Trie() {
 
@@ -38,9 +37,9 @@ void Trie::insert(Trie*& root, string str, string meaning) {
 	temp->meaning = meaning;
 }
 
-bool Trie::getMeaning(Trie* root, string word)
-{
+bool Trie::getMeaning(Trie* root, string word) {
 
+	clock_t startTime = clock();
 	// If root is null i.e. the dictionary is empty 
 	if (root == NULL)
 		return false;
@@ -56,25 +55,22 @@ bool Trie::getMeaning(Trie* root, string word)
 
 	// If it is the end of a valid word stored 
 	// before then return its meaning 
-	if (temp->isEndOfWord){
+	if (temp->isEndOfWord) {
+		cout << "Time taken to search: " << double(clock() - startTime) / CLOCKS_PER_SEC << " seconds." << endl;
 		cout << "Meaning of " << word << " is " << temp->meaning << endl;
 		return true;
 	}
-
 	return false;
 }
 
 Trie* Trie::find(char key) {
-
 	return table[getIndex(key)];
 }
 
-void Trie::add(char key, Trie* val) {
-
+void Trie::add(char key, Trie* val) { // add the val in table
 	table[getIndex(key)] = val;
 }
 
 int Trie::getIndex(char key) {
-
 	return (int)key % (int)'a';
 }
